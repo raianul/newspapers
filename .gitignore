@@ -10,3 +10,4 @@
 # Installer logs pip-log.txt
 pip-log.txt
 .idea
+libmysqlclient.18.dylib
