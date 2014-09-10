@@ -1,0 +1,5 @@
+Django==1.6.1
+MySQL-python==1.2.3
+certifi==14.05.14
+httplib2==0.7.7
+requests==2.4.0
