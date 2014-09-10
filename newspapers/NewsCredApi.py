@@ -2,8 +2,8 @@ __author__ = 'newscred'
 import requests
 import settings
 options = {
-'query': 'obama',
-'pagesize': 15
+    'query': 'obama',
+    'pagesize': 15
 }
 class NewscredApi():
     url = 'http://api.newscred.com/'
