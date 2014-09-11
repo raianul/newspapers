@@ -1,7 +1,7 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
 # Create your views here.
 
-def render(request, page):
-    ## galleris = to get the all galleries by using Gallery model class . .query
-    pass
+def response_gallery(request):
+    return HttpResponse("Hi, I am in GALLERIES !!")
