@@ -15,23 +15,29 @@ from video.views import render as video_render
 #follow gallery files
 
 def home(request):
+    context_dict = {}
     gallery = gallery_render(request, 1)
     image_count = 0
     if gallery:
         images = gallery['image_set']
         image_count  =  gallery['num_found']
-
+        context_dict['images'] = images
+        context_dict['image_count'] = image_count
 
     articles= article_render(request, 1)
     article_count = 0
     if articles:
         articles =articles['article_set']
         article_count= articles['num_found']
+        context_dict['articles'] = articles
+        context_dict['article_count'] = article_count
 
     videos= video_render(request, 1)
     video_count = 0
     if videos:
         videos =videos['video_set']
         video_count= videos['num_found']
+        context_dict['videos'] = videos
+        context_dict['video_count'] = video_count
 
-    return render(request, 'index.html' , {'images': images, 'image_count': image_count, 'articles': articles, 'article_count': article_count, 'videos': videos, 'video_count': video_count} )
+    return render(request, 'index.html' , context_dict )

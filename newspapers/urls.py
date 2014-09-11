@@ -10,11 +10,11 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^articles/[A-Za-z]+/[0-9]+$','articles.views.response_article'  ),
-
-    url(r'^gallery/[A-Za-z]+/[0-9]+$','gallery.views.response_gallery'  ),
-
-    url(r'^images/[A-Za-z]+/[0-9]+$','images.views.response_images'  ),
-
-    url(r'^videos/[A-Za-z]+/[0-9]+$','video.views.response_video'  ),
+    #url(r'^articles/[A-Za-z]+/[0-9]+$','articles.views.response_article'  ),
+    #
+    #url(r'^gallery/[A-Za-z]+/[0-9]+$','gallery.views.response_gallery'  ),
+    #
+    #url(r'^images/[A-Za-z]+/[0-9]+$','images.views.response_images'  ),
+    #
+    #url(r'^videos/[A-Za-z]+/[0-9]+$','video.views.response_video'  ),
 )
