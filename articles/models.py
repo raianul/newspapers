@@ -10,7 +10,7 @@ class Article(models.Model):
     from_date = models.DateTimeField( null= True, blank= True)
     to_date = models.DateTimeField(null= True, blank= True)
     page_size = models.IntegerField( null= True, blank= True)
-    has_images= models.BooleanField(bool)
+    has_images= models.BooleanField()
 
     class Meta:
         db_table = 'articles'
