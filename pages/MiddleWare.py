@@ -17,9 +17,10 @@ class LocalMiddleWare(object):
         if (not current_path.startswith('/static') and not current_path.startswith('/admin') and not current_path.startswith('/api') and
             not current_path.startswith('/login') and not current_path.startswith('/logout')):
 
-            page, _ = Page.get_current_page(current_path)
+            page, params = Page.get_current_page(current_path)
 
             setattr(request, 'page', page)
+            setattr(request, 'page_params', params)
 
 
         #now check for the regular expressio
