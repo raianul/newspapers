@@ -3,7 +3,7 @@ from pages.models import Page
 # Create your models here.
 
 class Gallery(models.Model):
-    page = models.ForeignKey(Page)
+    page_id = models.ForeignKey(Page)
     query = models.CharField( max_length = 25 )
     from_date = models.DateTimeField( null = True , blank = True)
     to_date = models.DateTimeField( null = True , blank = True )
