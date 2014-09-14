@@ -18,6 +18,7 @@ class LocalMiddleWare(object):
             not current_path.startswith('/login') and not current_path.startswith('/logout')):
 
             page, _ = Page.get_current_page(current_path)
+
             setattr(request, 'page', page)
 
 

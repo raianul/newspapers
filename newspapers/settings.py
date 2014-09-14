@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 # Custom Settings
 
 NEWSCRED_API_ACCESS_KEY = '953d5470b0b32e98631185076d691bb7'
+NEWSCRED_GALLERY_ENDPOINT = 'images'
 
 
 # Application definition
@@ -44,7 +45,7 @@ INSTALLED_APPS = (
     'gallery',
     'articles',
     'video',
-    'images'
+    #'images'
 )
 
 MIDDLEWARE_CLASSES = (

@@ -1,10 +1,7 @@
 __author__ = 'newscred'
 import requests
 import settings
-options = {
-    'query': 'obama',
-    'pagesize': 15
-}
+
 class NewscredApi():
     url = 'http://api.newscred.com/'
     options = {}
@@ -16,5 +13,5 @@ class NewscredApi():
         self.options['format'] = 'json'
 
     def response(self):
-        response = requests.get(self.url, params=options)
-        return response
+        response = requests.get(self.url, params=self.options)
+        return response.json()
