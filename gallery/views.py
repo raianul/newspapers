@@ -25,8 +25,7 @@ def render(request, page=1):
     if from_date:
         options['from_date'] =from_date
     if page_size:
-        options['page_size'] =page_size
-
+        options['pagesize'] =page_size
 
     gallery_obj = NewscredApi('images', options)
     return gallery_obj.response()
