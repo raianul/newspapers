@@ -29,8 +29,7 @@ ALLOWED_HOSTS = []
 # Custom Settings
 
 NEWSCRED_API_ACCESS_KEY = '953d5470b0b32e98631185076d691bb7'
-NEWSCRED_GALLERY_ENDPOINT = 'images'
-
+FLICKER_API_ACCESS_KEY = '34ab49d8837b7b213739b40521fe3b1c'
 
 # Application definition
 
@@ -45,7 +44,9 @@ INSTALLED_APPS = (
     'gallery',
     'articles',
     'video',
-    #'images'
+    'topic',
+    'flicker',
+
 )
 
 MIDDLEWARE_CLASSES = (

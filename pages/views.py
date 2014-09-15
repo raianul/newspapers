@@ -3,6 +3,8 @@ from django.shortcuts import render
 from gallery.views import render as gallery_render
 from articles.views import render as article_render
 from video.views import render as video_render
+from flicker.views import render as flicker_render
+from topic.views import render as topic_render
 
 # Create your views here.
  #Raiyan vai's part
@@ -41,5 +43,13 @@ def home(request):
         video_count= videos['num_found']
         context_dict['videos'] = videos
         context_dict['video_count'] = video_count
+
+    flickers = flicker_render(request, request.page.pk)
+    if flickers:
+        context_dict['flickers'] = flickers['photos']['photo']
+
+    topics = topic_render(request, request.page.pk)
+    if topics:
+        context_dict['topics'] = topics['topic_set']
 
     return render(request, 'index.html' , context_dict )

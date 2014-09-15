@@ -31,3 +31,9 @@ def get_proper_image(image_list):
     #max
 
     return image
+
+@register.assignment_tag()
+def getStr(strA , strB):
+    s = strA + "  " + strB
+    s = s[:40]
+    return s
