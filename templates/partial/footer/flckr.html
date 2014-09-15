@@ -1,14 +1,15 @@
 <div class="columns">
-        <div class="widget">
-          <h6>My Flickr</h6>
-          <div class="flickr">
+    <div class="widget">
+        <h6>My Flickr</h6>
+
+        <div class="flickr">
             {% for flicker in flickers %}
                 <div
-                       {% if forloop.counter|divisibleby:4 %} class="last" {% endif %}>
-                        <a href="#"> <img alt="" src="{{ flicker.url_s }}"  height="40" width="40" /></a>
+                        {% if forloop.counter|divisibleby:4 %} class="last" {% endif %}>
+                    <a href="#"> <img alt="" src="{{ flicker.url_s }}" height="40" width="40"/></a>
                 </div>
             {% endfor %}
-          </div>
-          <div class="clear"></div>
         </div>
-      </div>
+        <div class="clear"></div>
+    </div>
+</div>

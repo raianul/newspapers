@@ -10,3 +10,9 @@ def cut(value, arg):
 def resize_image(url, width, height):
     url =  url + '?width=%s&height=%s'
     return url % (width, height)
+
+@register.assignment_tag()
+def getStr(strA , strB):
+    s = strA + "  " + strB
+    s = s[:40]
+    return s

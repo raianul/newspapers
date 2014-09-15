@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from video.models import Video
-from newspapers.NewsCredApi import NewscredApi
+from newspapers.API import NewscredApi
 # Create your views here.
 
 def render(request,page=1):
