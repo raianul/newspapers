@@ -45,7 +45,7 @@ INSTALLED_APPS = (
     'gallery',
     'articles',
     'video',
-    #'images'
+    'topic',
 )
 
 MIDDLEWARE_CLASSES = (
