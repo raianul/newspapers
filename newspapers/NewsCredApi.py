@@ -14,4 +14,5 @@ class NewscredApi():
 
     def response(self):
         response = requests.get(self.url, params=self.options)
+        print response.url
         return response.json()

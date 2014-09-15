@@ -7,6 +7,19 @@ from newspapers.NewsCredApi import NewscredApi
 #def render(request,page=1):
     #return Article.objects.filter(page_id=page)
 
+#fields=article.title%20article.description%20article.image.guid%20article.image.caption%20article.image.urls.large
+
+ARTILCE_FILEDS = [
+    'article.title',
+    'article.guid',
+    'article.description',
+    'article.image.guid',
+    'article.image.caption',
+    'article.image.urls.large',
+    'article.image.width',
+    'article.image.height'
+]
+
 
 def render(request, page=1):
     ## galleris = to get the all galleries by using Gallery model class . .query
@@ -28,9 +41,11 @@ def render(request, page=1):
     if from_date:
         options['from_date'] =from_date
     if page_size:
-        options['page_size'] =page_size
+        options['pagesize'] =page_size
     if has_images:
         options['has_images'] =has_images
+
+    options['fields'] = ' '.join(ARTILCE_FILEDS)
 
     article_obj = NewscredApi('articles', options)
     return article_obj.response()

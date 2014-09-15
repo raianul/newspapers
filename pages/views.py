@@ -30,7 +30,7 @@ def home(request):
     article_count = 0
     if articles:
         articles =articles['article_set']
-        article_count= articles['num_found']
+       # article_count= articles['num_found']
         context_dict['articles'] = articles
         context_dict['article_count'] = article_count
 
