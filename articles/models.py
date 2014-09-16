@@ -6,6 +6,7 @@ from pages.models import Page
 
 class Article(models.Model):
     page_id = models.ForeignKey(Page)
+    block_name = models.CharField( choices = )
     query = models.CharField( max_length= 25)
     from_date = models.DateTimeField( null= True, blank= True)
     to_date = models.DateTimeField(null= True, blank= True)

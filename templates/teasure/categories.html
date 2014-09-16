@@ -1,10 +1,12 @@
 <div id="category_sort" class="clearfix">
     <div class="column">
         <h4><span>Technology</span></h4>
-        <ul>
-            <li><a href="#">Scientists use inkjet printing to produce solar cells</a></li>
-        </ul>
+       {% for article in articles %}
+             <ul>
+                    <li><a href="/article/{{ article.guid }}/{{ article.title|slugify }}">{{ article.title }}</a></li>
+             </ul>
     </div>
+        {%   endfor %}
     <div class="column">
         <h4><span>Hot on Web</span></h4>
         <ul>

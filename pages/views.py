@@ -28,7 +28,7 @@ def home(request):
         context_dict['images'] = images
         context_dict['image_count'] = image_count
 
-    articles= article_render(request, 1)
+    articles= article_render(request, request.page.pk)
     article_count = 0
     if articles:
         articles =articles['article_set']
