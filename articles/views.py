@@ -7,7 +7,6 @@ from newspapers.API import NewscredApi
 #def render(request,page=1):
     #return Article.objects.filter(page_id=page)
 
-#fields=article.title%20article.description%20article.image.guid%20article.image.caption%20article.image.urls.large
 
 ARTILCE_FILEDS = [
     'article.title',
