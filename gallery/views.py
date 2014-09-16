@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from gallery.models import Gallery
-from newspapers.NewsCredApi import NewscredApi
+from newspapers.API import NewscredApi
 
 # Create your views here.
 

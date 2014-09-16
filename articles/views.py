@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from articles.models import Article
-from newspapers.NewsCredApi import *
+from newspapers.API import *
 # Create your views here.
 
 #def render(request,page=1):
