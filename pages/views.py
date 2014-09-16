@@ -3,6 +3,7 @@ from django.shortcuts import render
 from gallery.views import render as gallery_render
 from articles.views import render as article_render
 from video.views import render as video_render
+from articles.views import render_article as main_article_render
 
 # Create your views here.
  #Raiyan vai's part
@@ -25,6 +26,7 @@ def home(request):
         image_count  =  gallery['num_found']
         context_dict['images'] = images
         context_dict['image_count'] = image_count
+        context_dict['request_page_name']=request.page
 
     articles= article_render(request, 1)
     article_count = 0
@@ -42,4 +44,19 @@ def home(request):
         context_dict['videos'] = videos
         context_dict['video_count'] = video_count
 
-    return render(request, 'index.html' , context_dict )
+
+
+    #if (request.page=="Article Paage"):
+    #    main_article=article_render(request)
+
+    if request.page_params:
+        template = 'post.html'
+        response_main_article = main_article_render(request)
+        context_dict['description']=response_main_article['article']['description']
+        context_dict['topic']=response_main_article['article']['topic_set'][0]['description']
+
+
+    else:
+        template = 'index.html'
+
+    return render(request, template , context_dict )

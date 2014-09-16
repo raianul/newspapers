@@ -1,14 +1,14 @@
 from django.shortcuts import render
 
 from articles.models import Article
-from newspapers.NewsCredApi import NewscredApi
+from newspapers.NewsCredApi import *
 # Create your views here.
 
 #def render(request,page=1):
     #return Article.objects.filter(page_id=page)
 
 
-def render(request, page=1):
+def render(request,page):
     ## galleris = to get the all galleries by using Gallery model class . .query
     try:
         article = Article.objects.filter(page_id=page)[0]
@@ -34,3 +34,9 @@ def render(request, page=1):
 
     article_obj = NewscredApi('articles', options)
     return article_obj.response()
+
+def render_article(request):
+    main_article_response = NewsCredApiArticle(guid="455b8927849a54bd5d953a4b0fde0a5e").response()
+    #import pdb;pdb.set_trace();
+    return main_article_response
+

@@ -31,6 +31,17 @@ ALLOWED_HOSTS = []
 NEWSCRED_API_ACCESS_KEY = '953d5470b0b32e98631185076d691bb7'
 NEWSCRED_GALLERY_ENDPOINT = 'images'
 
+#for the option human_readable='machine readable'
+ARTICLE_CHOICES=(
+    ('NVBAR','NAVIGATION_BAR'),
+    ('AF','ARTICLE_FIRST'),
+    ('AS','ARTICLE_SECOND'),
+    ('AT','ARTICLE_THIRD'),
+    ('MS','MIDDLE_SECTION'),
+    ('BT','BOTTOM_SECTION'),
+)
+
+
 
 # Application definition
 

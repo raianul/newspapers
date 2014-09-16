@@ -21,6 +21,7 @@ class LocalMiddleWare(object):
 
             setattr(request, 'page', page)
             setattr(request, 'page_params', params)
+            #import pdb;pdb.set_trace();
 
 
         #now check for the regular expressio
