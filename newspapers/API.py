@@ -29,3 +29,21 @@ class FlickerApi():
     def response(self):
         response = requests.get(self.url,params = self.options)
         return response.json()
+
+
+class NewsCredApiArticle():
+    url = 'http://api.newscred.com/'
+    options={}
+
+    def __init__(self,guid):
+        endpoint = "article/"
+        self.url = '%s%s%s' % (self.url,endpoint,guid);
+        #self.options=options;
+        self.options['access_key']=settings.NEWSCRED_API_ACCESS_KEY
+        self.options['format']='json'
+
+    def response(self):
+        response=requests.get(self.url,params=self.options)
+        #import pdb;pdb.set_trace();
+
+        return response.json();

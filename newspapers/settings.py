@@ -58,6 +58,7 @@ INSTALLED_APPS = (
     'articles',
     'video',
     'topic',
+    'flicker',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -68,6 +69,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'pages.middleware.LocalMiddleWare',
+
 )
 
 ROOT_URLCONF = 'newspapers.urls'
