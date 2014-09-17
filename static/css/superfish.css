@@ -76,7 +76,7 @@ ul.sf-menu li li li.sfHover ul {
     font-size: 12px;
     font-weight: bold;
     margin-right: 12px;
-    width: 63%;
+    width: 73%;
 }
 .category-container .sf-menu a,.category-container .sf-menu a:visited  { /* visited pseudo selector so IE6 applies text colour*/
 	color:#717171 ;

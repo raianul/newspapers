@@ -47,4 +47,4 @@ class NewsCredApiArticle():
     def response(self):
         response=requests.get(self.url,params=self.options)
         #import pdb;pdb.set_trace();
-        return response.json();
+        return response.json()
