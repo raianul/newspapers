@@ -1,44 +1,18 @@
+
+{% load tags %}
 <div id="inner-content">
     <div id="entry">
         <div id="post-top">
-            <h3 id="post-title">{{ description }}</h3>
+            <h3 id="post-title">{{ caption }}</h3>
 
-            <div class="post-meta"><span class="author">Posted by <a href="#">JDsans</a></span><span
-                    class="posting-date">August 4 2010</span><span class="label"><a href="#">Technology</a> , <a
-                    href="#">Business</a> , <a href="#">Report</a></span> <span class="print"><a
-                    onclick="window.print()" href="#">Print</a></span></div>
+
         </div>
         <div class="entry-content">
-            <img src="{{ STATIC_URL }}post-images/facebook_chat.jpg" alt=""/>
+            {% resize_image main_article_image 650 350 as url %}
+            <img src="{{ url  }}" alt=""/>
 
-            <p>{{ topic }}</p>
+            <p>{{ description | safe }}</p>
 
-            <h1>Headings Example</h1>
-
-            <h1>Lorem ipsum dolor sit amet consectetuer adipiscing elit</h1>
-
-            <h2>Aenean commodo ligula eget dolor aenean massa</h2>
-
-            <h3>Aenean commodo ligula eget dolor aenean massa</h3>
-            <h4>Aenean commodo ligula eget dolor aenean massa</h4>
-            <h5>Aenean commodo ligula eget dolor aenean massa</h5>
-            <h6>Aenean commodo ligula eget dolor aenean massa</h6>
-
-            <h1>Unordered List Example</h1>
-            <ul>
-                <li>Lorem ipsum dolor sit amet consectetuer.</li>
-                <li>Aenean commodo ligula eget dolor.</li>
-                <li>Aenean massa cum sociis natoque penatibus.</li>
-            </ul>
-            <h1>Ordered List Example</h1>
-            <ol>
-                <li>Lorem ipsum dolor sit amet consectetuer.</li>
-                <li>Aenean commodo ligula eget dolor.</li>
-                <li>Aenean massa cum sociis natoque penatibus.</li>
-            </ol>
-            <p>Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
-                Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet
-                adipiscing sem neque sed ipsum.</p>
 
             <div class="social_sharing_post"><a href="#" class="twitter"> Twitter</a> <a href="#" class="facebook">Facebook</a>
 

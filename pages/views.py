@@ -63,9 +63,13 @@ def home(request):
     if request.page_params:
         template = 'post.html'
         response_main_article = main_article_render(request)
+        context_dict['caption']=response_main_article['article']['image_set'][0]['caption']
         context_dict['description']=response_main_article['article']['description']
-        context_dict['topic']=response_main_article['article']['topic_set'][0]['description']
-
+        context_dict['main_article_image']=response_main_article['article']['image_set'][0]['urls']['large']
+        #context_dict['description'] = response_main_article['article']['description']
+        #context_dict['topic'] = response_main_article['article']['topic_set'][0]
+        #context_dict['topic_image_url'] = response_main_article['article'][0]['image']
+        #import pdb;pdb.set_trace()
     else:
         template = 'index.html'
 

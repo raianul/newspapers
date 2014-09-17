@@ -49,9 +49,31 @@ def render(request, page):
 
     return results
 
+
+ARTICLE_FIELDS_NEW = [
+    'article.title',
+    'article.guid',
+    'article.description',
+    'article.image.caption',
+    'article.image.urls.large',
+]
+
+
+
+
+
 def render_article(request):
-    main_article_response = NewsCredApiArticle(guid="455b8927849a54bd5d953a4b0fde0a5e").response()
+    #import pdb;pdb.set_trace()
+    #guid = request.page_params['articleId'];
     #import pdb;pdb.set_trace();
+    options={}
+    guid=request.page_params['articleId']
+    options['fields'] = ' '.join(ARTICLE_FIELDS_NEW)
+
+    main_article_response = NewsCredApiArticle(guid,options).response()
+    #print main_article_response.url
+    #import pdb;pdb.set_trace()
+
     return main_article_response
 
 

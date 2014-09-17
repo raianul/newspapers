@@ -28,7 +28,7 @@ ALLOWED_HOSTS = []
 
 # Custom Settings
 
-NEWSCRED_API_ACCESS_KEY = '953d5470b0b32e98631185076d691bb7'
+NEWSCRED_API_ACCESS_KEY = 'e4b8a7712c48daa2a598aff2cea272a3'
 FLICKER_API_ACCESS_KEY = '34ab49d8837b7b213739b40521fe3b1c'
 
 #for the option human_readable='machine readable'
@@ -59,6 +59,7 @@ INSTALLED_APPS = (
     'video',
     'topic',
     'flicker',
+    'tweets',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -69,6 +70,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'pages.middleware.LocalMiddleWare',
+
 
 )
 

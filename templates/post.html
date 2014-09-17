@@ -1,4 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Times Press | Post Page</title>
@@ -22,38 +23,52 @@
     <script type="text/javascript" src="{{ STATIC_URL }}js/slideshow.js"></script>
 
 </head>
-
-
 <body>
 
-    <div id="panel" style="display: none;">
-      <p># You can add any kind of announcement or updates happening on your website</p>
+<div id="panel" style="display: none;">
+    <p># You can add any kind of announcement or updates happening on your website</p>
+</div>
+
+<a id="notification" class="btn-slide" href="#">&darr;</a>
+
+<div id="container_wrapper">
+
+    {% include "partial/header.html" %}
+
+    <div id="content-wrapper">
+
+
+        {% include "teasure/inner_content.html" %}
+
+
+        {#        {% include "teasure/sidebar.html" %}#}
+        <div id="sidebar">
+
+            {% include "teasure/sponsors.html" %}
+
+            <div class="widget">
+
+                {% include "teasure/topics.html" %}
+
+                {% include "teasure/twitter.html" %}
+
+                {% include "teasure/videos.html" %}
+
+                <div class="clear"></div>
+
+            </div>
+            {% include "partial/footer/footer.html" %}
+        </div>
+
+
+        <!--<div class="clear"/>-->
+
+
+
+
     </div>
 
-    <a id="notification" class="btn-slide" href="#">&darr;</a>
-
-    <div id="container_wrapper">
-
-
-      {% include "partial/header.html" %}
-
-
-        <div id="content-wrapper">
-
-
-            {% include "teasure/inner_content.html" %}
-
-
-            {% include "teasure/sidebar.html" %}
-
-
-            <div class="clear"/>
-
-
-         </div>
-
-        {% include "partial/footer/footer.html" %}
-    </div>
+</div>
 
 
 </body>
