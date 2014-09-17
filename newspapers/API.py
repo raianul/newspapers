@@ -2,6 +2,8 @@ __author__ = 'newscred'
 import requests
 import settings
 
+
+
 class NewscredApi():
     url = 'http://api.newscred.com/'
     options = {}

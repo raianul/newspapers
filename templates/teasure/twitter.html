@@ -3,28 +3,19 @@
 
     <div class="widget-content">
         <ul id="twitter_widget">
-            <li>
-                <p>New template Frame IT set to roll out
-                    <small>15 June</small>
-                </p>
-            </li>
-            <li>
-                <p>New premium blogger template 'Milkyway' available on themeforest <a
-                        class="twitter-timeline-link" href="#">themeforest.net/item/milkyway/…</a>
-                    <small>17 May</small>
-                </p>
-            </li>
-            <li>
-                <p>New premium template Milkyway <a class="twitter-timeline-link"
-                                                    href="#">http://goo.gl/fb/Z895R</a>
-                    <small>17 May</small>
-                </p>
-            </li>
-            <li>
-                <p>Almost finished getting the new theme ready for release MILKYWAY
-                    <small>15 May</small>
-                </p>
-            </li>
+
+            {% for s in tweets %}
+                <li>
+
+
+                    <p>{{ s.text }}
+                        <small>{{ s.created_at }}</small>
+                    </p>
+                </li>
+
+
+            {% endfor %}
+
         </ul>
     </div>
     <div class="follow"><a href="#">Follow On Twitter....</a></div>

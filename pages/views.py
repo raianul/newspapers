@@ -1,11 +1,13 @@
 from django.shortcuts import render
 
+
 from gallery.views import render as gallery_render
 from articles.views import render as article_render
 from video.views import render as video_render
 from flicker.views import render as flicker_render
 from topic.views import render as topic_render
 from articles.views import render_article as main_article_render
+from tweets.views import get_tweets
 
 # Create your views here.
  #Raiyan vai's part
@@ -48,6 +50,12 @@ def home(request):
     if topics:
         context_dict['topics'] = topics['topic_set']
 
+
+    personal_tweets=get_tweets(screen_name="sondha_prodip",count=1)
+    #import pdb;pdb.set_trace()
+    if personal_tweets:
+        context_dict['tweets'] = personal_tweets;
+        #import pdb;pdb.set_trace()
 
     #if (request.page=="Article Paage"):
     #    main_article=article_render(request)
