@@ -1,72 +1,29 @@
+{% load tags %}
 <div id="featured">
     <h4 id="featured-title"><span>Featured</span></h4>
 
     <div id="featured_slider" style="position:relative; overflow:hidden;">
-        <div class="item">
-            <div class="column ">
-                <div class="inner">
-                    <div class="image"><a href="#"><img alt=""
-                                                        src="{{ STATIC_URL }}post-images/samsung170x124.jpg"/></a></div>
-                    <h3><a href="#">Samsung seeks ban on sale of key Apple products in US</a></h3>
-                </div>
-            </div>
-            <div class="column ">
-                <div class="inner">
-                    <div class="image"><a href="#"><img alt="" src="{{ STATIC_URL }}post-images/fast-food170x124.jpg"/></a>
+           {% for article in articles.navigation_bar.article_set %}
+               {% if forloop.first or forloop.counter0|divisibleby:5 %}
+                    <div class="item">
+               {% endif %}
+               {% get_proper_image article.image_set as image %}
+               {% resize_image image.urls.large 170 140 as url %}
+                    <div class="column ">
+                        <div class="inner">
+                            <div class="image">
+                                <a href="#">
+                                    <img alt="" src="{{ url }}"/>
+                                </a>
+                            </div>
+                            <h3><a href="/article/{{ article.guid }}/{{ article.title|slugify }}">{{ article.title }}</a></h3>
+                        </div>
                     </div>
-                    <h3><a href="#">Big fast-food chains lag rivals in taste</a></h3>
-                </div>
-            </div>
-            <div class="column">
-                <div class="inner">
-                    <div class="image"><a href="#"><img alt="" src="{{ STATIC_URL }}post-images/hybrid170x124.jpg"/></a>
+               {% if forloop.last or forloop.counter|divisibleby:5  %}
+                    <div class="clear"></div>
                     </div>
-                    <h3><a href="#">Toyota recalls 110,000 hybrid cars on safety concerns</a></h3>
-                </div>
-            </div>
-            <div class="column ">
-                <div class="inner">
-                    <div class="image"><a href="#"><img alt=""
-                                                        src="{{ STATIC_URL }}post-images/sony_hacker170x124.jpg"/></a>
-                    </div>
-                    <h3><a href="#">Sony hacker now on Facebook payroll</a></h3>
-                </div>
-            </div>
-            <div class="column ">
-                <div class="inner">
-                    <div class="image"><a href="#"><img alt=""
-                                                        src="{{ STATIC_URL }}post-images/san-francisco170x124.jpg"/></a>
-                    </div>
-                    <h3><a href="#">Survey ranks San Francisco greenest U.S. city</a></h3>
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
-        <div class="item">
-            <div class="column">
-                <div class="inner">
-                    <div class="image"><a href="#"><img alt="" src="{{ STATIC_URL }}post-images/satyagraha170x124.jpg"/></a>
-                    </div>
-                    <h3><a href="#">Gandhi's Salt Satyagraha the most influential protests</a></h3>
-                </div>
-            </div>
-            <div class="column ">
-                <div class="inner">
-                    <div class="image"><a href="#"><img alt=""
-                                                        src="{{ STATIC_URL }}post-images/france_prez170x124.jpg"/></a>
-                    </div>
-                    <h3><a href="#">Sarkozy involved in scuffle during handshake tour</a></h3>
-                </div>
-            </div>
-            <div class="column ">
-                <div class="inner">
-                    <div class="image"><a href="#"><img alt=""
-                                                        src="{{ STATIC_URL }}post-images/turtles170x124.jpg"/></a></div>
-                    <h3><a href="#">Turtles temporarily shut down runway at JFK airport</a></h3>
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
+               {% endif %}
+            {% endfor %}
     </div>
     <div class="nav_controls">
         <div id="featured_slider_prev"><a href="#">‹‹ Previous</a></div>

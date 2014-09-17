@@ -31,6 +31,18 @@ ALLOWED_HOSTS = []
 NEWSCRED_API_ACCESS_KEY = '953d5470b0b32e98631185076d691bb7'
 FLICKER_API_ACCESS_KEY = '34ab49d8837b7b213739b40521fe3b1c'
 
+#for the option human_readable='machine readable'
+ARTICLE_CHOICES=(
+    ('navigation_bar','Navigation Bar'),
+    ('article_first','Article First'),
+    ('article_second','Article Second'),
+    ('article_third','Article Third'),
+    ('middle_section','Middle Section'),
+    ('bottom_section','Bottom Section'),
+)
+
+
+
 # Application definition
 
 INSTALLED_APPS = (
@@ -56,6 +68,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'pages.middleware.LocalMiddleWare',
+
 )
 
 ROOT_URLCONF = 'newspapers.urls'

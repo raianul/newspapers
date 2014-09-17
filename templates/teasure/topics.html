@@ -3,7 +3,7 @@
 <div id="tabs">
 
     {% for topic in topics %}
-        {% getStr topic.name topic.description as topic_name %}
+        {% getStr topic.name topic.description 30 as topic_name %}
         <div id="tab-one" class="tab">
             <ul>
                 <li>
