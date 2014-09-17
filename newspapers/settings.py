@@ -39,6 +39,7 @@ ARTICLE_CHOICES=(
     ('article_third','Article Third'),
     ('middle_section','Middle Section'),
     ('bottom_section','Bottom Section'),
+    ('recentpost_section','RecentPost Section'),
 )
 
 
