@@ -1,11 +1,11 @@
 from django.shortcuts import render
 
 from gallery.views import render as gallery_render
-from articles.views import render as article_render
 from video.views import render as video_render
-from articles.views import render_article as main_article_render
+from articles.views import render as article_render
 from flicker.views import render as flicker_render
 from topic.views import render as topic_render
+from articles.views import render_article as main_article_render
 
 # Create your views here.
  #Raiyan vai's part
@@ -21,6 +21,7 @@ from topic.views import render as topic_render
 def home(request):
 
     context_dict = {}
+    #import pdb;pdb.set_trace()
     gallery = gallery_render(request, request.page.pk)
     image_count = 0
     if gallery:
@@ -33,10 +34,9 @@ def home(request):
     articles= article_render(request, request.page.pk)
     article_count = 0
     if articles:
-        articles =articles['article_set']
-        #article_count= articles['num_found']
         context_dict['articles'] = articles
         context_dict['article_count'] = article_count
+
 
     videos= video_render(request, 1)
     video_count = 0

@@ -1,14 +1,14 @@
 from django.shortcuts import render
 
 from articles.models import Article
-from newspapers.API import NewscredApi
+from newspapers.API import *
 # Create your views here.
 
 #def render(request,page=1):
     #return Article.objects.filter(page_id=page)
 
 
-ARTILCE_FILEDS = [
+ARTICLE_FIELDS = [
     'article.title',
     'article.guid',
     'article.description',
@@ -23,7 +23,7 @@ ARTILCE_FILEDS = [
 
 def render(request, page):
 
-    articles = Article.objects.filter(page_id=page).all()
+    articles = Article.objects.filter(page_id=page)
     options = {}
     results = {}
     for article in articles:
@@ -42,7 +42,14 @@ def render(request, page):
             options['pagesize'] = page_size
         if has_images:
             options['has_images'] = has_images
-        article_obj = NewscredApi('articles', options)
-        results[article.block_name] = article_obj.response()
 
+        options['fields'] = ' '.join(ARTICLE_FIELDS)
+
+        article_obj = NewscredApi('articles', options)
+        results[article.block_choice] = article_obj.response()
     return results
+
+def render_article(request):
+    main_article_response = NewsCredApiArticle(guid="455b8927849a54bd5d953a4b0fde0a5e").response()
+    #import pdb;pdb.set_trace();
+    return main_article_response

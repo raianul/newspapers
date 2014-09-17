@@ -3,7 +3,7 @@
     <h4 id="featured-title"><span>Featured</span></h4>
 
     <div id="featured_slider" style="position:relative; overflow:hidden;">
-           {% for article in articles.navigation %}
+           {% for article in articles.navigation_bar.article_set %}
                {% if forloop.first or forloop.counter0|divisibleby:5 %}
                     <div class="item">
                {% endif %}

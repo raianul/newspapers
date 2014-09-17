@@ -33,7 +33,7 @@ def get_proper_image(image_list):
     return image
 
 @register.assignment_tag()
-def getStr(strA , strB):
+def getStr(strA , strB, size):
     s = strA + "  " + strB
-    s = s[:40]
+    s = s[:size]
     return s
