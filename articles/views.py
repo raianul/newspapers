@@ -20,7 +20,6 @@ ARTICLE_FIELDS = [
 ]
 
 
-
 def render(request, page):
 
     articles = Article.objects.filter(page_id=page)
@@ -35,9 +34,9 @@ def render(request, page):
         if query:
             options['query'] = query
         if to_date:
-            options['to_date'] = to_date
+            options['to_date'] = getDateFormat( str(to_date) )
         if from_date:
-            options['from_date'] = from_date
+            options['from_date'] = getDateFormat( str( from_date))
         if page_size:
             options['pagesize'] = page_size
         if has_images:
@@ -47,9 +46,15 @@ def render(request, page):
 
         article_obj = NewscredApi('articles', options)
         results[article.block_choice] = article_obj.response()
+
     return results
 
 def render_article(request):
     main_article_response = NewsCredApiArticle(guid="455b8927849a54bd5d953a4b0fde0a5e").response()
     #import pdb;pdb.set_trace();
     return main_article_response
+
+
+def getDateFormat(dt):
+    x = dt.split()
+    return x[0]
