@@ -1,5 +1,10 @@
 jQuery(document).ready(function() {
 
+    $(".fancybox").fancybox({
+		openEffect	: 'none',
+		closeEffect	: 'none'
+	});
+
 //Notification bar
 	$(".btn-slide").click(function(){
 	  $("#panel").slideToggle(1000);
@@ -100,4 +105,5 @@ $("#featured .column:nth-child(6n-1)").css("margin-right", "0");
 $(".post_double:nth-child(2n)").css("margin-right", "35px");
 
 
-}); 
+});
+

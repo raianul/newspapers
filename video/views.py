@@ -6,10 +6,8 @@ from newspapers.API import NewscredApi
 
 def render(request,page=1):
 
-
     try:
-
-        video =Video.objects.filter(page_id=page)[0]
+        video = Video.objects.filter(page_id=page)[0]
     except IndexError:
         return False
     options = {}
@@ -26,8 +24,8 @@ def render(request,page=1):
     if from_date:
         options['from_date'] =from_date
     if page_size:
-        options['page_size'] =page_size
+        options['pagesize'] = page_size
 
+    video_obj = NewscredApi('videos', options)
 
-    article_obj = NewscredApi('videos', options)
-    return article_obj.response()
+    return video_obj.response()

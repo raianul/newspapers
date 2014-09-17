@@ -24,7 +24,7 @@ class FlickerApi():
         self.options['api_key'] = settings.FLICKER_API_ACCESS_KEY
         self.options['method'] = 'flickr.photos.search'
         self.options['format'] = 'json'
-        self.options['extras'] = 'url_s'
+        self.options['extras'] = 'url_s,url_m'
         self.options['nojsoncallback'] = True
     def response(self):
         response = requests.get(self.url,params = self.options)

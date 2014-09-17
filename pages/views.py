@@ -36,13 +36,9 @@ def home(request):
         context_dict['articles'] = articles
         context_dict['article_count'] = article_count
 
-    videos= video_render(request, 1)
-    video_count = 0
+    videos= video_render(request, request.page.pk)
     if videos:
-        videos =videos['video_set']
-        video_count= videos['num_found']
-        context_dict['videos'] = videos
-        context_dict['video_count'] = video_count
+        context_dict['videos'] = videos['video_set']
 
     flickers = flicker_render(request, request.page.pk)
     if flickers:

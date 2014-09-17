@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'articles',
     'video',
     'topic',
+    'flicker',
 )
 
 MIDDLEWARE_CLASSES = (
