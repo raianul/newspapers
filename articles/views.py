@@ -20,7 +20,6 @@ ARTICLE_FIELDS = [
 ]
 
 
-
 def render(request, page):
 
     articles = Article.objects.filter(page_id=page)
