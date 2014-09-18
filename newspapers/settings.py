@@ -28,7 +28,7 @@ ALLOWED_HOSTS = []
 
 # Custom Settings
 
-NEWSCRED_API_ACCESS_KEY = 'e4b8a7712c48daa2a598aff2cea272a3'
+
 FLICKER_API_ACCESS_KEY = '34ab49d8837b7b213739b40521fe3b1c'
 
 #for the option human_readable='machine readable'
@@ -91,16 +91,7 @@ DATABASES = {
 }
 """
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'newspapers',                      # Or path to database file if using sqlite3.
-        'USER': 'root',                      # Not used with sqlite3.
-        'PASSWORD': 'qweqwe',                  # Not used with sqlite3.
-        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
-}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
