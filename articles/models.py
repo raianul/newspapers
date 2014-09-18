@@ -6,6 +6,7 @@ from newspapers.settings import ARTICLE_CHOICES
 
 class Article(models.Model):
     page_id = models.ForeignKey(Page)
+    name=models.CharField(max_length=255)
     block_choice = models.CharField(max_length=25,choices=ARTICLE_CHOICES)
     query = models.CharField( max_length= 25)
     from_date = models.DateTimeField( null= True, blank= True)
@@ -15,3 +16,6 @@ class Article(models.Model):
 
     class Meta:
         db_table = 'articles'
+
+    def __unicode__(self):
+        return self.name

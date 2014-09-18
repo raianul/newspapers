@@ -1,15 +1,9 @@
-import re
+from django.http import Http404
 from pages.views import render
 from pages.models import Page
 
 
-class LocalMiddleWare(object):
-
-    def __init__(self):
-        self.content_name=''
-        self.content_id=''
-        self.status=0;
-
+class PagesMiddleWare(object):
 
     def process_request(self, request):
         #test_string="this is only gor teting purpose";#request.get_full_path();
@@ -19,15 +13,8 @@ class LocalMiddleWare(object):
 
             page, params = Page.get_current_page(current_path)
 
+            if not page:
+                raise Http404
+
             setattr(request, 'page', page)
             setattr(request, 'page_params', params)
-            #import pdb;pdb.set_trace();
-
-
-        #now check for the regular expressio
-
-        # check for the id
-
-        # call for the render function
-        #return render( request, 'index.html' , {'name':request.new_var})
-

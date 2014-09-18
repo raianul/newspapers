@@ -14,10 +14,7 @@ def resize_image(url, width, height):
 
 @register.assignment_tag()
 def get_proper_image(image_list):
-    #if len(image_list) == 1:
-    #    return image_list[0]
-
-    #listCalc=[]
+    image = None
     key = 0
     for img in image_list:
         if key==0:

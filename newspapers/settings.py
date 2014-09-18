@@ -33,13 +33,13 @@ FLICKER_API_ACCESS_KEY = '34ab49d8837b7b213739b40521fe3b1c'
 
 #for the option human_readable='machine readable'
 ARTICLE_CHOICES=(
-    ('navigation_bar','Navigation Bar'),
-    ('article_first','Article First'),
-    ('article_second','Article Second'),
-    ('article_third','Article Third'),
+    ('navigation_bar','Navigation Section'),
+    ('article_first','Inner Section First Column'),
+    ('article_second','Inner Section Second Column'),
+    ('article_third','Inner Section Third Column'),
     ('middle_section','Middle Section'),
     ('bottom_section','Bottom Section'),
-    ('recentpost_section','RecentPost Section'),
+    ('recentpost_section','Footer Section'),
 )
 
 
@@ -69,7 +69,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'pages.middleware.LocalMiddleWare',
+    'pages.middleware.PagesMiddleWare',
 
 
 )
